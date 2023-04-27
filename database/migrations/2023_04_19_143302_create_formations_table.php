@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('category');
             $table->string('name');
             $table->string('teacher_name');
-            $table->dateTime('date_and_time');
+            $table->string('date_and_time');
             $table->float('price');
             $table->timestamps();
         });

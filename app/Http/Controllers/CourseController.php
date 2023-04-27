@@ -34,6 +34,15 @@ class CourseController extends Controller
         $course->sessions_per_payment = $sessions_per_payment;
         $course->save();
 
-        return redirect()->route('page.index');
+        return redirect()->route('page.formations');
     }
+
+    public function destroy($id)
+    {
+        $course = Course::findOrFail($id);
+        $course->delete();
+        return redirect()->back()->with('success', 'Student deleted successfully!');
+    }
+
+
 }

@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\EnrollmentController;
+use App\Http\Controllers\FormationController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +25,14 @@ Route::get('formations',[RouteController::class,'formations'])->name('page.forma
 
 
 Route::post('/courses', [CourseController::class, 'store'])->name('courses.store');
+Route::delete('/courses/{id}', [CourseController::class, 'destroy'])->name('courses.destroy');
 
 
-Route::post('/students', [StudentController::class, 'store'])->name('students.store');
+Route::post('/formation', [FormationController::class, 'store'])->name('formation.store');
+
+
+
+Route::get('/store', [StudentController::class, 'store'])->name('students.store');
 
 
 
@@ -35,3 +43,5 @@ Route::get('dashboard/educationfinanciere',[RouteController::class,'education'])
 
 
 
+
+Route::post('/enrollments', [EnrollmentController::class, 'store'])->name('enrollments.store');

@@ -100,6 +100,7 @@
                           </thead>
                           <tbody>
 
+                          @foreach($courses as $course)
                             <tr>
                               <th scope="row"><div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
@@ -108,9 +109,9 @@
                                 </label>
                               </div></th>
 
-                              <td>    <a class="text" style="text-decoration: none;"  href="./coursInformation.html"> Math 2as</a></td>
-                              <td>Cours de soutiens</td>
-                              <td>saidani mahmoud</td>
+                              <td>    <a class="text" style="text-decoration: none;"  href="./coursInformation.html"> {{$course->name}}</a></td>
+                              <td>cours</td>
+                              <td>{{$course->teacher_name}}</td>
 
                               <td class="p-1">
                                 <a href="{{route('page.math')}}">                               <button class="btn btn-primary  " type="submit" style="color: white;">
@@ -123,31 +124,56 @@
 
                                 </td>
                             </tr>
-                            <tr>
-                              <th scope="row"><div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
+{{--                            <tr>--}}
+{{--                              <th scope="row"><div class="form-check">--}}
+{{--                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">--}}
+{{--                                <label class="form-check-label" for="defaultCheck1">--}}
 
-                                </label>
-                              </div></th>
+{{--                                </label>--}}
+{{--                              </div></th>--}}
 
-                              <td>    <a class="text" style="text-decoration: none;"  href="./formationInformation.html"> Education financiere</a></td>
-                              <td>Cours de soutiens</td>
-                              <td>saidani mahmoud</td>
+{{--                              <td>    <a class="text" style="text-decoration: none;"  href="./formationInformation.html"> Education financiere</a></td>--}}
+{{--                              <td>Cours de soutiens</td>--}}
+{{--                              <td>saidani mahmoud</td>--}}
 
-                              <td class="p-1">
-                                <a href="{{route('page.education')}}">
-                                <button class="btn btn-primary  " type="submit" style="color: white;">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" >
-                                    <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z "/>
-                                  </svg>
-                                </button>
-                              </a>
+{{--                              <td class="p-1">--}}
+{{--                                <a href="{{route('page.education')}}">--}}
+{{--                                <button class="btn btn-primary  " type="submit" style="color: white;">--}}
+{{--                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" >--}}
+{{--                                    <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z "/>--}}
+{{--                                  </svg>--}}
+{{--                                </button>--}}
+{{--                              </a>--}}
 
-                                </td>
-                            </tr>
+{{--                                </td>--}}
+{{--                            </tr>--}}
+                          @endforeach
+
+                          @foreach($formations as $formation)
+                              <tr>
+                                  <th scope="row"><div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                          <label class="form-check-label" for="defaultCheck1">
+
+                                          </label>
+                                      </div></th>
+
+                                  <td>    <a class="text" style="text-decoration: none;"  href="./coursInformation.html"> {{$formation->name}}</a></td>
+                                  <td>formation</td>
+                                  <td>{{$formation->teacher_name}}</td>
+
+                                  <td class="p-1">
+                                      <a href="{{route('page.math')}}">                               <button class="btn btn-primary  " type="submit" style="color: white;">
+                                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" >
+                                                  <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z "/>
+                                              </svg>
+                                          </button>
+                                      </a>
 
 
+                                  </td>
+                              </tr>
+                          @endforeach
                           </tbody>
                       </table>
                 </div>
@@ -170,18 +196,20 @@
            <div class=" ajout-formation col-9 col-lg-4 d-none  border background" style="max-width: 400px; z-index: 20;  border-radius: 20px;">
             <div class=" p-4 mb-1  ms-1 me-1  row">
               <div class="first-side col" >
-                   <h6  class="  ">Categorie:</h6>
-                   <select  class=" mb-3 p-2 form-select form-select-sm" aria-label=".form-select-sm example">
+                  <form method="POST" action="{{ route('formation.store') }}">
+                      @csrf
+                   <h6 >Categorie:</h6>
+                   <select  class=" mb-3 p-2 form-select form-select-sm" aria-label=".form-select-sm example" name="category">
                       <option selected value="Formation de carte">Formation de carte</option>
                       <option value="Formation qualifiante">Formation qualifiante</option>
                       <option value="formation pour les entreprises">formation pour les entreprises</option>
                       <option value="Formation diplômante">Formation diplômante</option>
 
                     </select>
-              <h6  class="">Nom de la formation:</h6>
-              <input class="form-control mb-3" type="text" placeholder=""  aria-label="default input example">
+              <h6  class="" >Nom de la formation:</h6>
+              <input  name="name" class="form-control mb-3" type="text" placeholder=""  aria-label="default input example">
               <h6 class=""> Nom de l'enseignant:</h6>
-              <input class="form-control mb-4" type="text" placeholder=""  aria-label="default input example">
+              <input name="teacher_name" class="form-control mb-4" type="text" placeholder=""  aria-label="default input example">
 
               <h6 class="mb-2"> Date et heure:</h6>
 
@@ -209,7 +237,7 @@
                       <label for="inputField" class=""> <h6> Prix de la Formation: </h6></label>
 
                       <div  class="input-group mt-2">
-                          <input  type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+                          <input  name="price" type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
                           <span style="color: gray; " class="input-group-text">DA</span>
                           </div>
 
@@ -220,11 +248,11 @@
               <div class="m-4 d-flex justify-content-end mw-100">
 
 
-            <button type="button"class="submit-formation btn btn-primary " style="color: white;" >Confirmer</button>
+            <button type="submit"class="submit-formation btn btn-primary " style="color: white;" >Confirmer</button>
 
         </div>
 
-          </div>
+          </div></form>
 
           <div class=" ajout-cours col-9 col-lg-4 d-none  border background" style="max-width: 400px; z-index: 20;  border-radius: 20px;">
             <div class=" p-4 mb-1  ms-1 me-1  row">

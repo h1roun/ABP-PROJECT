@@ -2,19 +2,43 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
+use App\Models\Formation;
 use Illuminate\Http\Request;
 use App\Models\Student;
+use Illuminate\Support\Carbon;
+
 class RouteController extends Controller
 {
-    public function index(){
-        $posts=Student::all();
-        return view('index',compact('posts'));
+
+
+    public function index()
+    {
+        $posts = Student::all();
+        $courses = Course::all();
+        $enrolled_students = null;
+        $course = Course::find(2);
+
+        if ($course) {
+            $enrolled_students = $course->students;
+        }
+
+        return view('index', compact('posts', 'courses', 'enrolled_students'));
     }
-    public function dashboard(){
-        return view('dashboard');
+    public function dashboard()
+    {
+        $dayName = Carbon::now()->format('l');
+
+        $today_courses = Course::where('date_and_time', 'like', "%{$dayName}%")->get();
+
+        return view('dashboard', compact('today_courses'));
     }
     public function formations(){
-        return view('cours');
+        $courses = Course::all();
+        $courses = $courses->sortBy('name');
+        $formations = Formation::all();
+        $formations = $formations->sortBy('name');
+        return view('cours',compact('courses','formations'));
     }
     public function etudiants(){
         return view('index');
@@ -34,5 +58,5 @@ class RouteController extends Controller
     public function education(){
         return view('educationFinanciere');
     }
-    
+
 }
