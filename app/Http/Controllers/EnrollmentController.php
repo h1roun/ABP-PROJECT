@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Enrollment;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,13 @@ class EnrollmentController extends Controller
         $enrollment->save();
 
         return redirect()->back();
+    }
+    public function show($courseId)
+    {
+        $course = Course::find($courseId);
+        $enrollments = Enrollment::where('course_id', $courseId)->with('student')->get();
+
+        return view('math', compact('course', 'enrollments'));
     }
 
 }

@@ -10,6 +10,9 @@
 </head>
 <body style="height: 100vh;">
 @include('layouts.side_bar')
+<div class="container-fluid "  >
+    <div class="main row" >
+
         <div class="col-2"></div>
     <div class="main-side col-10 container  gx-5" style="overflow-y: scroll; overflow-x: hidden;"  >
             <div class="row  d-flex align-items-center w-100 " style="flex-wrap: nowrap;height: 10%;">
@@ -25,18 +28,18 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
                             <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
                           </svg>
-                            
+
                     </div>
                     <div class="bg rounded-circle bg-primary position-absolute  " style="z-index: -10; top: 7%; width: 43%; height: 85%;"></div>
                 </div>
                 </div>
-               
+
             </div>
             <div class="row  gy-10 " style="height: 90%;">
 
                 <div class="left-side  col-md h-100  d-flex align-items-center" >
                 <div class=" w-100  container border background" style=" min-height: 75vh;border-radius: 20px;">
-                 
+
                 <div class="bottom  row w-100 gx-0 pt-4" style="overflow-x:hidden;" >
                     <table class="table table-hover students" >
                         <thead>
@@ -44,7 +47,7 @@
                               <th scope="col"><div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="selectAll">
                                 <label class="form-check-label" for="defaultCheck1">
-                                
+
                                 </label>
                               </div></th>
                               <th scope="col">Name <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +57,7 @@
                                  </th>
                              <th></th>
                                  <th>a paye</th>
-                                 <th class="d-flex justify-content-end"> 
+                                 <th class="d-flex justify-content-end">
                                     <button type="button" class="btn btn-danger ms-2">
                                     <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M19.5633 5.6818H15.98V4.70452C15.98 3.04316 14.8154 1.77271 13.2925 1.77271H9.70914C8.18622 1.77271 7.02164 3.04316 7.02164 4.70452V5.6818H3.43831C2.90081 5.6818 2.54248 6.07271 2.54248 6.65907C2.54248 7.24543 2.90081 7.63634 3.43831 7.63634H4.33414V20.3409C4.33414 22.0023 5.49873 23.2727 7.02164 23.2727H15.98C17.5029 23.2727 18.6675 22.0023 18.6675 20.3409V7.63634H19.5633C20.1008 7.63634 20.4591 7.24543 20.4591 6.65907C20.4591 6.07271 20.1008 5.6818 19.5633 5.6818ZM8.81299 4.7045C8.81299 4.11814 9.17132 3.72723 9.70882 3.72723H13.2921C13.8296 3.72723 14.188 4.11814 14.188 4.7045V5.68177H8.81299V4.7045ZM15.9796 21.3181C16.5171 21.3181 16.8755 20.9272 16.8755 20.3409V7.63632H6.12549V20.3409C6.12549 20.9272 6.48382 21.3181 7.02132 21.3181H15.9796ZM10.6047 11.5454V17.409C10.6047 17.9954 10.2463 18.3863 9.70882 18.3863C9.17132 18.3863 8.81299 17.9954 8.81299 17.409V11.5454C8.81299 10.959 9.17132 10.5681 9.70882 10.5681C10.2463 10.5681 10.6047 10.959 10.6047 11.5454ZM14.1883 17.409V11.5454C14.1883 10.959 13.83 10.5681 13.2925 10.5681C12.755 10.5681 12.3966 10.959 12.3966 11.5454V17.409C12.3966 17.9954 12.755 18.3863 13.2925 18.3863C13.83 18.3863 14.1883 17.9954 14.1883 17.409Z" fill="#F53131"/>
@@ -65,18 +68,18 @@
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M0.750488 0.79541H22.2505V24.25H0.750488V0.79541Z" fill="white" fill-opacity="0.8"/>
                                         </g>
                                         </svg>
-                                        
+
                                 </button></th>
                             </tr>
                           </thead>
                           <tbody>
-                           
-                          
+
+
                             <tr class="d-flex flex-wrap ">
                                 <th scope="row"><div class="form-check">
                                   <input class="form-check-input" data-checkbox type="checkbox" value="" id="defaultCheck1">
                                   <label class="form-check-label" for="defaultCheck1">
-                                  
+
                                   </label>
                                 </div></th>
                                 <td>Pam Hlapert</td>
@@ -93,13 +96,13 @@
                                         <div class="progress-block"></div>
                                         <div class="progress-block"></div>
                                         </div>
-                                   
+
                                         <div class="presence-bar d-flex">
                                           <div class="payment-block "></div>
                                           <div class="payment-block "></div>
-            
+
                                         </div>
-                                        
+
                                       </div>
                                 </td>
                                 <td> 15000da</td>
@@ -113,16 +116,16 @@
                                         <button type="button"class="modify-student btn btn-success me-2" style="color: white;" >Payer</button>
                                      <button type="button"class="modify-student btn btn-primary " style="color: white;" > present</button>
                                     </div>
-                                    
+
                                 </td>
-                               
-                               
+
+
                             </tr>
                             <tr class="d-flex flex-wrap ">
                                 <th scope="row"><div class="form-check">
                                   <input class="form-check-input" data-checkbox type="checkbox" value="" id="defaultCheck1">
                                   <label class="form-check-label" for="defaultCheck1">
-                                  
+
                                   </label>
                                 </div></th>
                                 <td>Pam Hlapert</td>
@@ -139,31 +142,31 @@
                                         <div class="progress-block"></div>
                                         <div class="progress-block"></div>
                                         </div>
-                                   
+
                                         <div class="presence-bar d-flex">
                                           <div class="payment-block "></div>
                                           <div class="payment-block "></div>
-            
+
                                         </div>
-                                        
+
                                       </div>
                                 </td>
                                 <td> paye</td>
                                 <td class="btns d-flex justify-content-end  ">
-                            
+
                                      <button type="button"class="modify-student btn btn-primary " style="color: white;" > present</button>
-           
-                                    
+
+
                                 </td>
-                               
-                               
+
+
                             </tr>
-                           
-                            
-                           
-                           
-                        
-                              
+
+
+
+
+
+
                           </tbody>
                       </table>
                 </div>
@@ -174,11 +177,11 @@
             </div>
 
             </div>
-         
+
             </div>
         </div>
 
-       
+
       <div class="front d-flex justify-content-center w-100 h-100  row d-none m-0 " style=" z-index: 10; position: absolute; top: 0; ">
         <div class="blur " style="z-index: 9;">
         </div>
@@ -198,53 +201,53 @@
               </div>
               <div class=" mt-4 d- flex align-items-center">
                   <button type="button " class="mb-1 btn btn-outline-primary" style="border-radius: 20px; padding-bottom: 4px; padding-top: 4px;" disabled >Math 1as
-                      
+
                       <svg xmlns="http://www.w3.org/2000/svg"  width="16" height="16" fill="currentColor"  class="bi bi-x" viewBox="0 0 16 16">
                           <path  d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                         </svg>
                   </button>
                   <button type="button " class="mb-1 btn btn-outline-primary" style="border-radius: 20px; padding-bottom: 4px; padding-top: 4px;" disabled >Anglais 1as
-                      
+
                       <svg xmlns="http://www.w3.org/2000/svg"  width="16" height="16" fill="currentColor"  class="bi bi-x" viewBox="0 0 16 16">
                           <path  d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                         </svg>
                   </button>
                   <button type="button " class="mb-1 btn btn-outline-primary" style="border-radius: 20px; padding-bottom: 4px; padding-top: 4px;" disabled >Français 2as
-                      
+
                       <svg xmlns="http://www.w3.org/2000/svg"  width="16" height="16" fill="currentColor"  class="bi bi-x" viewBox="0 0 16 16">
                           <path  d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                         </svg>
                   </button>
-    
-    
-                  
+
+
+
               </div>
-    
+
                   <button class="btn btn-primary rounded-pill mt-2" type="submit" style="color: white;">Ajouter une formation</button>
                   <div class="mb-1">
                   <label for="exampleInputEmail1" class="form-label "><h6 class="mt-3">Adresse Email:</h6></label>
                   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                   </div>
-                  
+
                   <div class="mb-4">
                       <label for="" class="form-label mt-2"><h6>Adresse de Résidence:</h6></label>
                       <input class=" mb-5 form-control" type="text" placeholder="" aria-label="default input example">
                   </div>
-    
+
                   <div class="mb-5 d-flex justify-content-end mw-100">
                   <button type="submit" class="btn btn-primary "style="color: white;" data-bs-toggle="button" aria-pressed="true">Confirmer</button>
                   </div>
               </form>
-          </div> 
-          
+          </div>
+
           </div>
         </div>
-       
-       
-    </div>
-    
 
-<div class="background" style="overflow: hidden; width: 100%; height: 100%; top: 0%; right: 0%; position: fixed;z-index: -10; "> 
+
+    </div>
+
+
+<div class="background" style="overflow: hidden; width: 100%; height: 100%; top: 0%; right: 0%; position: fixed;z-index: -10; ">
 
     <div class="grad " style="
         position: absolute;
@@ -255,17 +258,17 @@
         opacity: 80%;
         background-image: linear-gradient(0deg, #0c88bc, rgba(0,179,255,0) 50%);">
         </div>
- 
+
         <div class="glass " style="
         position: absolute;
         width: 100%;
         height: 100%;
         z-index: -7;
-        backdrop-filter: blur(20px) ;"        
+        backdrop-filter: blur(20px) ;"
         ></div>
 
-    
-    
+
+
     <div class="groupe-circles" style="height: 100%; overflow: hidden; width: 100vw; z-index: -10 ;position: fixed; top: 0%; left: 0%;">
         <div class="circle" style="
         position: relative;

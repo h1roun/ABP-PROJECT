@@ -44,5 +44,12 @@ class CourseController extends Controller
         return redirect()->back()->with('success', 'Student deleted successfully!');
     }
 
+    public function students()
+    {
+        return $this->belongsToMany(Student::class, 'enrollments');
+    }
+
+
+
 
 }

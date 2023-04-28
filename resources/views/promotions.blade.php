@@ -12,6 +12,8 @@
 
 
 @include('layouts.side_bar')
+<div class="container-fluid "  >
+    <div class="main row" >
         <div class="col-2"></div>
     <div class="main-side col-10 container  gx-5" style="overflow-y: scroll; overflow-x: hidden;"  >
             <div class="row  d-flex align-items-center w-100 " style="flex-wrap: nowrap;height: 10%;">
@@ -27,12 +29,12 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
                             <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
                           </svg>
-                            
+
                     </div>
                     <div class="bg rounded-circle bg-primary position-absolute  " style="z-index: -10; top: 7%; width: 43%; height: 85%;"></div>
                 </div>
                 </div>
-               
+
             </div>
             <div class="row  gy-10 " style="height: 90%;">
 
@@ -43,7 +45,7 @@
                         <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="recherche" aria-describedby="emailHelp">
 
                     </div>
-                    <div class="add-btn col-5 d-flex gx-1 justify-content-end  ">
+                    <div class=" col-5 d-flex gx-1 justify-content-end  ">
                         <button type="button" class=" add-btn btn btn-primary d-inline-flex align-items-center">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="bi bi-plus" viewBox="0 0 16 16">
                             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
@@ -60,10 +62,10 @@
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.750488 0.79541H22.2505V24.25H0.750488V0.79541Z" fill="white" fill-opacity="0.8"/>
                                 </g>
                                 </svg>
-                                
+
                         </button>
                     </div>
-                    
+
                 </div>
                 <div class="bottom  row w-100 gx-0 " style="overflow-x:hidden;" >
                  <table class="table table-hover " >
@@ -72,7 +74,7 @@
           <th scope="col"><div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="selectAll">
             <label class="form-check-label" for="defaultCheck1">
-            
+
             </label>
           </div></th>
           <th scope="col">Name <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,51 +105,51 @@
           <th scope="row"><div class="form-check">
             <input class="form-check-input " type="checkbox" value="" id="defaultCheck1">
             <label class="form-check-label ms-5" for="defaultCheck1">
-            
+
             </label>
           </div></th>
-          <td>                 
+          <td>
              <a class="text" style="text-decoration: none;" href="./promotionInformation.html">
             Eid el fitre</a>
           </td>
-      
+
           <td> -50%</td>
           <td>1 mois et 7 jours</td>
           <td>  12 formations</td>
-          
+
           <td>
             <a href="promotions.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
             <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
           </svg>
         </a>
             </td>
-       
+
         </tr>
         <tr>
           <th scope="row"><div class="form-check">
             <input class="form-check-input " type="checkbox" value="" id="defaultCheck1">
             <label class="form-check-label ms-5" for="defaultCheck1">
-            
+
             </label>
           </div></th>
-          <td>                 
+          <td>
              <a class="text" style="text-decoration: none;" href="./promotionInformation.html">
             Eid el fitre</a>
           </td>
-      
+
           <td> -50%</td>
           <td>1 mois et 7 jours</td>
           <td>  12 formations</td>
-          
+
           <td>
             <a href="promotions.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
             <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
           </svg>
         </a>
             </td>
-       
+
         </tr>
-       
+
       </tbody>
     </table>
                 </div>
@@ -158,11 +160,11 @@
             </div>
 
             </div>
-         
+
             </div>
         </div>
 
-       
+
       <div class="front d-flex justify-content-center w-100 h-100  row d-none m-0 " style=" z-index: 10; position: absolute; top: 0; ">
         <div class="blur " style="z-index: 9;">
         </div>
@@ -198,24 +200,24 @@
                     <span style="color: gray;" class="input-group-text">j</span>
                 </div>                            </div>
         </div>
- 
-          
+
+
                 <div class="mb-5 me-3 d-flex justify-content-end mw-100">
                     <a href="./promotions.html">
                 <button type="submit" class="btn btn-primary "style="color: white;" data-bs-toggle="button" aria-pressed="true">Confirmer</button>
                     </a>
             </div>
             </form>
-          </div> 
-          
+          </div>
+
           </div>
         </div>
-       
-       
-    </div>
-    
 
-<div class="background" style="overflow: hidden; width: 100%; height: 100%; top: 0%; right: 0%; position: fixed;z-index: -10; "> 
+
+    </div>
+
+
+<div class="background" style="overflow: hidden; width: 100%; height: 100%; top: 0%; right: 0%; position: fixed;z-index: -10; ">
 
     <div class="grad " style="
         position: absolute;
@@ -226,17 +228,17 @@
         opacity: 80%;
         background-image: linear-gradient(0deg, #0c88bc, rgba(0,179,255,0) 50%);">
         </div>
- 
+
         <div class="glass " style="
         position: absolute;
         width: 100%;
         height: 100%;
         z-index: -7;
-        backdrop-filter: blur(20px) ;"        
+        backdrop-filter: blur(20px) ;"
         ></div>
 
-    
-    
+
+
     <div class="groupe-circles" style="height: 100%; overflow: hidden; width: 100vw; z-index: -10 ;position: fixed; top: 0%; left: 0%;">
         <div class="circle" style="
         position: relative;

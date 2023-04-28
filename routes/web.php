@@ -27,12 +27,23 @@ Route::get('formations',[RouteController::class,'formations'])->name('page.forma
 Route::post('/courses', [CourseController::class, 'store'])->name('courses.store');
 Route::delete('/courses/{id}', [CourseController::class, 'destroy'])->name('courses.destroy');
 
+Route::get('/enrollments/{courseId}',[EnrollmentController::class,'show'])->name('enrollments.index');
+
+
+
+
 
 Route::post('/formation', [FormationController::class, 'store'])->name('formation.store');
 
 
 
 Route::get('/store', [StudentController::class, 'store'])->name('students.store');
+Route::get('/delete/{id}',[StudentController::class,'delete'])->name('students.delete');
+Route::post('/multi-delete', [StudentController::class, 'multiDelete'])->name('posts.multi-delete');
+Route::get('/edit/{id}',[StudentController::class,'edit'])->name('posts.edit');
+
+
+
 
 
 

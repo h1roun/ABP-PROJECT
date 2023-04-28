@@ -12,8 +12,10 @@
 
 
 @include('layouts.side_bar')
+<div class="container-fluid "  >
+    <div class="main row" >
 <div class="col-2"></div>
-<div class="main-side col-10 container  gx-5" style="overflow: s
+<div class="main-side col-10 container  gx-5" style="overflow: scroll;
     ;"  >
     <div class="row  d-flex align-items-center w-100 mb-3" style="flex-wrap: nowrap;height: 10%;">
         <h1 class="h1  text gx-5 mt-3 col-9 ms-1 fs-1"  >Tous les etudiants</h1>
@@ -41,8 +43,9 @@
             <div class=" w-100 p-2 container border background" style=" height: 90%;border-radius: 20px;min-height: 75vh;">
                 <div class="top w-100 p-2 row align-items-center p-2 pt-4 pb-4" style="height: 15%;">
                     <div class="col">
-                        <form>
-                            <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="recherche" aria-describedby="emailHelp">
+                        <form action="#">
+                            <input type="text" class="form-control recherche" id="exampleInputEmail1"  placeholder="recherche" >
+
                         </form>
 
 
@@ -60,9 +63,9 @@
                             <p class=" text-light d-none d-md-block fw-light ms-1 mb-0 overflow-hidden" >ajouter un etudiant</p>
 
                         </button>
-                        <form action="{{route('page.education')}}" method=" get">
-
-                            <button type="submit" class="btn btn-danger ms-2">
+                        <form action="{{route('posts.multi-delete')}}" method="POST" >
+                            @csrf
+                            <button type="submit"  class="btn btn-danger ms-2">
                                 <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M19.5633 5.6818H15.98V4.70452C15.98 3.04316 14.8154 1.77271 13.2925 1.77271H9.70914C8.18622 1.77271 7.02164 3.04316 7.02164 4.70452V5.6818H3.43831C2.90081 5.6818 2.54248 6.07271 2.54248 6.65907C2.54248 7.24543 2.90081 7.63634 3.43831 7.63634H4.33414V20.3409C4.33414 22.0023 5.49873 23.2727 7.02164 23.2727H15.98C17.5029 23.2727 18.6675 22.0023 18.6675 20.3409V7.63634H19.5633C20.1008 7.63634 20.4591 7.24543 20.4591 6.65907C20.4591 6.07271 20.1008 5.6818 19.5633 5.6818ZM8.81299 4.7045C8.81299 4.11814 9.17132 3.72723 9.70882 3.72723H13.2921C13.8296 3.72723 14.188 4.11814 14.188 4.7045V5.68177H8.81299V4.7045ZM15.9796 21.3181C16.5171 21.3181 16.8755 20.9272 16.8755 20.3409V7.63632H6.12549V20.3409C6.12549 20.9272 6.48382 21.3181 7.02132 21.3181H15.9796ZM10.6047 11.5454V17.409C10.6047 17.9954 10.2463 18.3863 9.70882 18.3863C9.17132 18.3863 8.81299 17.9954 8.81299 17.409V11.5454C8.81299 10.959 9.17132 10.5681 9.70882 10.5681C10.2463 10.5681 10.6047 10.959 10.6047 11.5454ZM14.1883 17.409V11.5454C14.1883 10.959 13.83 10.5681 13.2925 10.5681C12.755 10.5681 12.3966 10.959 12.3966 11.5454V17.409C12.3966 17.9954 12.755 18.3863 13.2925 18.3863C13.83 18.3863 14.1883 17.9954 14.1883 17.409Z" fill="#F53131"/>
                                     <mask id="mask0_80_3515" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="2" y="1" width="19" height="23">
@@ -102,30 +105,33 @@
                             <th scope="col"></th>
 
                         </tr>
-                        @foreach($posts as $post)
+                        @if(count($posts) > 0)
+                            @foreach($posts as $post)
                         </thead>
                         <tbody>
 
 
-                        <tr>
+                        <tr data-id="{{$post->id}}">
                             <th scope="row"><div class="form-check">
-                                    <input class="form-check-input" data-checkbox type="checkbox"name="selected[{{$post->id}} ]" value="{{$post->id}}" id="defaultCheck1">
+                                    <input class="form-check-input" data-checkbox type="checkbox"name="ids[{{$post->id}} ]" value="{{$post->id}}" id="defaultCheck1">
                                     <label class="form-check-label" for="defaultCheck1">
-                                        </form>
+
                                     </label>
                                 </div></th>
-                            <td>{{$post->name}}</td>
+                            <td class="name">{{$post->name}}</td>
                             <td>{{$post->phone}}</td>
 
                             <td>
-                                <a href="" >
+                                <a href="{{route('students.delete',$post->id)}}" >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
                                         <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
 
                                     </svg>
                                 </a>
                             </td>
-                        @endforeach
+                            @endforeach
+                            </form>
+                        @endif
 
                         </tbody>
                     </table>
@@ -153,136 +159,99 @@
 
                 </div>
 
-                <div class="student-info">
+                <div class="student-info" data-id="">
                     <button type="button" class="close-student position-absolute top-0 end-0 m-4 btn-close" aria-label="Close"> </button>
-                    <div class=" p-4 mb-1  ms-1 me-1 ">
-                        <p  class=" mb-0 ">Nom et prenom:</p>
-                        <h1 class="mb-4 fs-4 "></h1>
-                        <p  class="mb-0" >Numéro de téléphone:</p>
-                        <h2 class=" mb-4 fs-4 "></h2>
-                        <p class="mb-2">Cour et Formation:</p>
-                        <div class="">
-                            <a href="./math.html">
-                                <div class=" mb-1 me-1 btn btn-outline-primary rounded-pill formation-btn"  aria-pressed="true">Math 2as</div>
-                            </a>
-                            <a href="./educationFinanciere.html">
-                                <div class="mb-1 me-1 btn btn-outline-primary rounded-pill formation-btn"  aria-pressed="true">Education financiere</div>
-                            </a>
-                        </div>
-                        <div class="general-information">
-                            <p class="mb-0 mt-4">Adresse Email:</p>
-                            <p class=" bold fs-4"></p>
-                            <p class="mt-3 mb-0">Adresse et Résidence:</p>
-                            <p class="mb-3 fs-4"></p>
-                            <div class="mt-5 d-flex justify-content-end mw-100">
+                    @foreach($posts as $post)
+                        <div class="one-student p-4 mb-1  ms-1 me-1 d-none " data-id="{{$post->id}}">
 
-                                <button type="button" class="me-1 btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" color="white" width="16" height="16" fill="currentColor" class="mb-1 bi bi-trash3" viewBox="0 0 16 16">
-                                        <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
-                                    </svg></button>
-                                <button type="button"class="modify-student btn btn-primary " style="color: white;" >Modifier</button>
-                            </div>
-                        </div>
-                        <div class="specefic-information">
-                            <div class="progress-bar mt-4 mb-2">
-                                <div class="progresscontainers d-flex w-100 h-100 ">
-                                    <div class="progress-block"></div>
-                                    <div class="progress-block"></div>
-                                    <div class="progress-block"></div>
-                                    <div class="progress-block"></div>
+                            <p  class=" mb-0 ">Nom et prenom:</p>
+                            <h1 class="mb-4 fs-4 name">{{$post->name}}</h1>
+                            <p  class="mb-0 " >Numéro de téléphone:</p>
+                            <h2 class=" mb-4 fs-4 number">{{$post->phone}}</h2>
+
+                            <div class="general-information">
+                                <p class="mb-0 mt-4">Adresse Email:</p>
+                                <p class=" bold fs-4 email">{{$post->email}}</p>
+                                <p class="mt-3 mb-0">Adresse et Résidence:</p>
+                                <p class="mb-3 fs-4 adresse">{{$post->address}}</p>
+                                <div class="mt-5 d-flex justify-content-end mw-100">
+                                    <button type="button"class="modify-student btn btn-primary " style="color: white;" >Modifier</button>
                                 </div>
-
-                                <div class="payment-bar d-flex">
-                                    <div class="payment-block bg-success"></div>
-                                    <div class="payment-block bg-success"></div>
-                                    <div class="payment-block bg-success"></div>
-
-                                </div>
-                                <div class="presence-bar d-flex">
-                                    <div class="payment-block bg-dark"></div>
-                                    <div class="payment-block bg-dark"></div>
-
-                                </div>
-
                             </div>
-                            <p class="mb-0">dernier payement:</p>
-                            <p>17/07/2023 a paye 2000da</p>
-                            <p class="mb-0">solde:</p>
-                            <h1 style="font-size: 40px;">1500da</h1>
-                            <div class="btns d-flex flex-column align-items-end">
-                                <button type="button"class="modify-student btn btn-success mb-2" style="color: white;" >ajouter un payement</button>
-                                <button type="button"class="modify-student btn btn-primary " style="color: white;" >Marquer present</button>
+                           <br>
 
-                            </div>
+                            <form method="POST" action="{{ route('enrollments.store') }}">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="course_id">Ajouter Cour et Formation:</label>
 
+
+                                    <input name="student_id" class="d-none" value="{{$post->id}}"  placeholder="{{$post->id}}"></input>
+
+
+                                    <select class="form-control" id="course_id" name="course_id">
+                                        @foreach ($courses as $course)
+                                            <option value="{{ $course->id }}">{{ $course->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Enroll</button>
+                            </form>
 
                         </div>
-                    </div>
+                    @endforeach
+
+
                 </div>
+
                 <div class="modify-student-form d-none p-4">
-                    <form action="{{route('students.store')}}" method="POST">
+                    <button type="button" class="close-student position-absolute top-0 end-0 m-4 btn-close" aria-label="Close"> </button>
+                    <form action="{{route('posts.edit',1)}}">
+                        @csrf
+
                         <div class="mb-3">
                             <label for="" class="form-label" aria-placeholder="Pam Halpert" style="font: bolder;"><h6> Nom et Prénom:</h6></label>
-                            <input class="form-control" type="text" name="name" placeholder="Pam Halpert" aria-label="default input example">
+                            <input class="form-control name" type="text" name="name" placeholder="Pam Halpert" aria-label="default input example">
                         </div>
                         <div class="mb-3">
                             <div class="form-group">
-                                <label for="inputPhoneNumber"><h6 class="mt-2"> Numéro de Téléph:</h6></label>
-                                <input type="tel" class="form-control" id="inputPhoneNumber"name="phone" placeholder="0775509056" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                                <label for="inputPhoneNumber"><h6 class="mt-2"> Numéro de Téléphone:</h6></label>
+                                <input type="tel" class="form-control number" id="inputPhoneNumber"name="phone" placeholder="0775509056"  required>
                             </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="course_id">Course</label>
+                            <select class="form-control" id="course_id" name="course_id">
+                                @foreach ($courses as $course)
+                                    <option value="{{ $course->id }}">{{ $course->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
 
 
                         <div class="mb-1">
                             <label for="exampleInputEmail1" class="form-label "><h6 class="mt-3">Adresse Email:</h6></label>
-                            <input type="email" class="form-control" name="email" placeholder="p_halpert@estin.dz" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="email" class="form-control email" name="email" placeholder="p_halpert@estin.dz" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
 
                         <div class="mb-4">
                             <label for="" class="form-label mt-2"><h6>Adresse de Résidence:</h6></label>
-                            <input class=" mb-5 form-control" type="text" name="addresse" placeholder="amizour bat 15 num 345" aria-label="default input example">
+                            <input class=" mb-5 form-control adresse" type="text" name="addresse" placeholder="amizour bat 15 num 345" aria-label="default input example">
                         </div>
 
                         <div class="mb-5 d-flex justify-content-end mw-100">
 
-                        </div>
+
+                            <button type="submit" class="conrimer-modifier btn btn-primary "style="color: white;" aria-pressed="true">Confirmer</button>
                     </form>
                 </div>
 
             </div>
+
         </div>
     </div>
-
-
-    <form method="POST" action="{{ route('enrollments.store') }}">
-        @csrf
-        <div class="form-group">
-            <label for="student_id">Student</label>
-            <select class="form-control" id="student_id" name="student_id">
-                @foreach ($posts as $post)
-                    <option value="{{ $post->id }}">{{ $post->name }}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="course_id">Course</label>
-            <select class="form-control" id="course_id" name="course_id">
-                @foreach ($courses as $course)
-                    <option value="{{ $course->id }}">{{ $course->name }}</option>
-                @endforeach
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Enroll</button>
-    </form>
-
-
-    <h1>Enrolled Students</h1>
-
-    <ul>
-{{--        @foreach ($enrolled_students as $enrolled_student)--}}
-{{--            <li>{{ $enrolled_student->name }} - {{ $enrolled_student->email }}</li>--}}
-{{--        @endforeach--}}
-    </ul>
-
+</div>
 
 </div>
 
@@ -332,11 +301,6 @@
 
 
 
-
-
-
-
-
 <div class="background" style="overflow: hidden; width: 100%; height: 100%; top: 0%; right: 0%; position: fixed;z-index: -10; ">
 
     <div class="grad " style="
@@ -370,7 +334,6 @@
             background-image: radial-gradient( rgba(1, 187, 249, 0.866),rgba(1, 187, 249, 0)  );
             top: 20%;
             right: -10%;
-
             "> </div>
         <div class="circle" style="
              z-index: -8;
@@ -382,7 +345,6 @@
                 background-image: radial-gradient( rgba(1, 187, 249, 0.866),rgba(1, 187, 249, 0)  );
                 top: -10%;
                 left: 60%;
-
                 "> </div>
         <div class="circle" style="
              z-index: -30;

@@ -10,6 +10,8 @@
 </head>
 <body style="height: 100vh;">
 @include('layouts.side_bar')
+<div class="container-fluid "  >
+    <div class="main row" >
         <div class="col-2"></div>
     <div class="main-side col-10 container  gx-5" style="overflow-y: scroll; overflow-x: hidden;"  >
             <div class="row  d-flex align-items-center w-100 " style="flex-wrap: nowrap;height: 10%;">
@@ -285,7 +287,7 @@
                       </div>
 
                       <div class="  row ">
-                          <label for="inputField" class=""> <h6> Prix de la Formation: </h6></label>
+                          <label for="inputField" class=""> <h6> Prix de cours: </h6></label>
 
                           <div  class="input-group mt-2">
                               <input  type="number" class="form-control" aria-label="Amount (to the nearest dollar)" name="price">

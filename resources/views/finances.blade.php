@@ -14,7 +14,9 @@
 
 
 @include('layouts.side_bar')
-
+<div class="container-fluid "  >
+    <div class="main row" >
+        <div class="col-2"></div>
     <div class="main-side col-10 container  gx-5"   >
             <div class="row  d-flex align-items-center w-100 " style="flex-wrap: nowrap;height: 10%;">
                 <h1 class="h1  text gx-5 mt-3 col-9 ms-1 fs-1">Finances</h1>
@@ -29,18 +31,18 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
                             <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
                           </svg>
-                            
+
                     </div>
                     <div class="bg rounded-circle bg-primary position-absolute  " style="z-index: -10; top: 7%; width: 43%; height: 85%;"></div>
                 </div>
                 </div>
-               
+
             </div>
             <div class="row  gy-10 " style="height: 90%;">
 
                 <div class="left-side  col-md h-100  d-flex align-items-center" style="overflow: scroll;">
                 <div class=" w-100  container border background" style=" height: 90%;overflow: scroll;border-radius: 20px;">
-                   
+
                     </div>
                 </div>
             </div>
@@ -48,13 +50,13 @@
             </div>
 
             </div>
-         
+
             </div>
         </div>
 
- 
 
-<div class="background" style="overflow: hidden; width: 100%; height: 100%; top: 0%; right: 0%; position: absolute;z-index: -10; "> 
+
+<div class="background" style="overflow: hidden; width: 100%; height: 100%; top: 0%; right: 0%; position: absolute;z-index: -10; ">
 
     <div class="grad " style="
         position: absolute;
@@ -65,17 +67,17 @@
         opacity: 80%;
         background-image: linear-gradient(0deg, #0c88bc, rgba(0,179,255,0) 50%);">
         </div>
- 
+
         <div class="glass " style="
         position: absolute;
         width: 100%;
         height: 100%;
         z-index: -7;
-        backdrop-filter: blur(20px) ;"        
+        backdrop-filter: blur(20px) ;"
         ></div>
 
-    
-    
+
+
     <div class="groupe-circles" style="height: 100%; overflow: hidden; width: 100vw; z-index: -10 ;position: fixed; top: 0%; left: 0%;">
         <div class="circle" style="
         position: relative;

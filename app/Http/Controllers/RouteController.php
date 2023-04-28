@@ -28,10 +28,12 @@ class RouteController extends Controller
     public function dashboard()
     {
         $dayName = Carbon::now()->format('l');
-
+        $studentCount = Student::all()->count();
+        $coursesCount = Course::all()->count();
+        $FormationCount = Formation::all()->count();
         $today_courses = Course::where('date_and_time', 'like', "%{$dayName}%")->get();
 
-        return view('dashboard', compact('today_courses'));
+        return view('dashboard', compact('today_courses', 'studentCount','coursesCount','FormationCount'));
     }
     public function formations(){
         $courses = Course::all();
@@ -52,8 +54,8 @@ class RouteController extends Controller
     public function ajouter(){
         return view('index');
     }
-    public function math(){
-        return view ('math');
+    public function course(){
+        return view('math');
     }
     public function education(){
         return view('educationFinanciere');
