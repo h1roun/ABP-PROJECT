@@ -11,19 +11,18 @@ return new class extends Migration
      *
      * @return void
      */
+
     public function up()
     {
-        Schema::create('courses', function (Blueprint $table) {
+        Schema::create('promotions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('teacher_name');
-            $table->string('date_and_time');
-            $table->float('price');
-            $table->integer('sessions_per_payment')->default(4);
-            $table->decimal('reduced_price', 8, 2)->nullable();
+            $table->decimal('discount_percentage', 5, 2);
             $table->timestamps();
         });
     }
+
+
 
     /**
      * Reverse the migrations.
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('courses');
+        Schema::dropIfExists('promotions');
     }
 };

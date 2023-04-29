@@ -28,4 +28,19 @@ class EnrollmentController extends Controller
         return view('math', compact('course', 'enrollments'));
     }
 
+    public function payee(Request $request, $id)
+    {
+        $enrollment = Enrollment::find($id);
+        $enrollment->sessions_paid += $request->input('sessionsPerPayment');
+        $enrollment->save();
+
+        return redirect()->back();
+    }
+    public function present(Request $request,  $id)
+    {
+        $enrollment = Enrollment::find($id);
+        $enrollment->decrement('sessions_paid');
+        return redirect()->back();
+    }
+
 }

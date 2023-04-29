@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use App\Models\Course;
 
@@ -49,7 +51,11 @@ class CourseController extends Controller
         return $this->belongsToMany(Student::class, 'enrollments');
     }
 
-
+    public static function applyPromotion($discount)
+    {
+        static::where('reduced_price', null)->update(['reduced_price' => DB::raw('price * ' . (1 - $discount))]);
+        return redirect()->back();
+    }
 
 
 }

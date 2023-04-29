@@ -7,6 +7,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PromotionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,10 @@ Route::post('/courses', [CourseController::class, 'store'])->name('courses.store
 Route::delete('/courses/{id}', [CourseController::class, 'destroy'])->name('courses.destroy');
 
 Route::get('/enrollments/{courseId}',[EnrollmentController::class,'show'])->name('enrollments.index');
+Route::post('/enrollments/{id}/payee', [EnrollmentController::class,'payee'])->name('enrollments.payee');
+Route::post('/enrollments/{id}/present', [EnrollmentController::class,'present'])->name('enrollments.present');
+
+
 
 
 
@@ -48,6 +53,8 @@ Route::get('/edit/{id}',[StudentController::class,'edit'])->name('posts.edit');
 
 
 Route::get('promotions',[RouteController::class,'promotions'])->name('page.promotions');
+Route::post('/promotions', [PromotionController::class, 'store'])->name('promotions.store');
+
 Route::get('fincances',[RouteController::class,'finances'])->name('page.finances');
 Route::get('dashboard/math',[RouteController::class,'math'])->name('page.math');
 Route::get('dashboard/educationfinanciere',[RouteController::class,'education'])->name('page.education');

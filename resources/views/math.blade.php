@@ -94,20 +94,36 @@
                                 </div></th>
                                 <td style="min-width: 180px">{{ $enrollment->student->name }} </td>
                                 <td>
-                                    <h7 style="background-color:green">5 payee </h7>
-                                    <h7 style="background-color:red">| 0 no payee</h7>
+
+                                    <a class="btn text-white badge-check" style="background-color: #3b5998;" href="#!" role="button">
+                                        <span class="badge m-0.5 {{ $enrollment->sessions_paid >= 0 ? 'bg-success' : 'bg-danger' }}">{{ $enrollment->sessions_paid }}</span>
+                                    </a>
 
                                 </td>
                                 <td class="btns d-flex justify-content-end ">
-                                    <div style="max-width: 250px;" class="input-group me-2 d-flex flex-nowrap">
-                                        <input type="text"  class="form-control" value="{{ $course->sessions_per_payment }}" aria-label="Amount (to the nearest dollar)">
-                                        <span style="color: gray;" class="input-group-text">Séance </span>
+                                    <form action="/enrollments/{{ $enrollment->id }}/payee" method="POST" style=" display:inline;">
+                                        <div class="d-flex align-items-center">
+                                            <div style="max-width: 250px;" class="input-group me-2 d-flex flex-nowrap">
+                                                <input type="text" name="sessionsPerPayment" class="form-control" value="{{ $course->sessions_per_payment }}" aria-label="Amount (to the nearest dollar)">
+                                                <span style="color: gray;" class="input-group-text">Séance </span>
+                                                <span style="color: gray;" class="input-group-text">{{ $course->price }}da</span>
+                                            </div>
+                                            @csrf
+                                            <button type="submit" class=" btn btn-success me-2" style="color: white;">Payer</button>
 
-                                            <span style="color: gray;" class="input-group-text">{{ $course->price }}da</span>
+                                        </div>
+                                    </form>
+                                    <form action="/enrollments/{{ $enrollment->id }}/present" method="POST" style=" display:inline;">
+                                        <div class="d-flex align-items-center">
 
-                                    </div>
-                                        <button type="button"class="modify-student btn btn-success me-2" style="color: white;" >Payer</button>
-                                     <button type="button"class="modify-student btn btn-primary " style="color: white;" > present</button>
+                                            @csrf
+
+                                            <button type="submit" class="modify-student btn btn-primary" style="color: white;"> present</button>
+                                        </div>
+                                    </form>
+
+
+
 
 
                                 </td>
@@ -265,6 +281,10 @@
                 "> </div>
     </div>
       </div>
+        <script>
+
+
+        </script>
       @include('layouts.script')
 </body>
 </html>
